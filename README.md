@@ -9,7 +9,7 @@ For those who are using 4.2 until 4.3 is officially released, this module will m
 
 ### How to Use
 
-**(1)** Place the [OrderedClientStartup.lua](https://github.com/vyth/OrderedClientStartup/blob/master/rc.lua) file in your lua's path, for example:
+**(1)** Place the [OrderedClientStartup.lua](https://github.com/vyth/OrderedClientStartup/blob/master/OrderedClientStartup.lua) file in your lua's path, for example:
 
 ```
 ~/.luarocks/share/lua/5.2/
