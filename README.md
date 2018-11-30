@@ -42,11 +42,6 @@ if((awful.client.iterate(function(c)
    return awful.rules.match(c, {class = "Lxterminal"})end))()) then
 
   --USAGE: OCS:add_app(index, command, tag, screen, [geo={x,y,w,h}])
-  
-  --NOTE:  To get proper screen coordinates use this in the terminal to report
-  --       the x,y position of the mouse:
-  --         watch -t -n 0.0001 xdotool getmouselocation 
-  --       Also, setting x,y coords only works when floating, not tiled
  
                              -- MONITOR 1 (RHS) --
                              
