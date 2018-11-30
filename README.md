@@ -35,11 +35,13 @@ screen[1].tags[1].layout = awful.layout.suit.floating
 screen[2].tags[1].layout = awful.layout.suit.tile.left;
 
 
--- funky way to check if I have an open lxterminal and if so, then the startup
--- script already launched, replace "Lxterminal" with whatever you always have
--- open to prevent everything from launching during an AwesomeWM restart
-if((awful.client.iterate(function(c) 
-   return awful.rules.match(c, {class = "Lxterminal"})end))()) then
+-- popen not the best way to check if startup already happened...but good enough
+-- until 4.3 comes out, and pgrep is quick enough to not block for periods of
+-- time
+local fd = io.popen("pgrep bash | wc -l")
+local num_bash = tonumber(fd:read('*all'))
+fd:close()
+if(num_bash < 1) then 
 
   --USAGE: OCS:add_app(index, command, tag, screen, [geo={x,y,w,h}])
  
