@@ -24,7 +24,7 @@ For those who are using 4.2 until 4.3 is officially released, this module will m
 
 or in the same folder as your rc.lua.
 
-**(2)** Sample code to ad to end of your rc.lua file.
+**(2)** Sample code to add to end of your rc.lua file.
 
 
 ```lua
@@ -79,15 +79,15 @@ watch -t -n 0.0001 xdotool getmouselocation
 ```
 - Order of spawning matters for tiled layouts, an example of tile.left window order:
 ```
-+----------------------------------------------+
++-----------------------+----------------------+
 |                       |                      |
 |                       |                      |
 |          2            |                      |
 |                       |                      |
-+------------------------            3         |
++-----------------------+            3         |
 |                       |                      |
 |                       |                      |
 |          1            |                      |
 |                       |                      |
-+----------------------------------------------+
++-----------------------+----------------------+
 ```
