@@ -73,7 +73,7 @@ if((awful.client.iterate(function(c)
 end
 ```
 
-###Tips
+### Tips
 
 - Use this command to find the (x,y) coordinates on your screen to help client's placement:
 ```
