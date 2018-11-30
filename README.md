@@ -55,11 +55,11 @@ if((awful.client.iterate(function(c)
 
                              -- MONITOR 2 (LHS) --
 
-  OCS:add_app(4,"lxterminal --working-directory="/your/proj/dir"
+  OCS:add_app(4,"lxterminal --working-directory=\"/your/proj/dir\""
               screen[2].tags[1], screen[2])
-  OCS:add_app(5,"lxterminal --working-directory="/your/proj/dir/includes"
+  OCS:add_app(5,"lxterminal --working-directory=\"/your/proj/dir/includes\""
               screen[2].tags[1], screen[2])
-  OCS:add_app(6,"lxterminal --working-directory="/your/proj/dir/src"
+  OCS:add_app(6,"lxterminal --working-directory=\"/your/proj/dir/src\""
               screen[2].tags[1], screen[2])
 
 
