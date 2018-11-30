@@ -3,7 +3,7 @@
 
 ### About
 
-Module created to allow clients to be spawned in a specified order and then moved to the proper screen, tag, position and dimensions. The currently unreleased AwesomeWM version 4.3 fixes this issue which can be built from [their official repo.](https://github.com/awesomeWM/awesome)
+Module created to allow clients to be spawned in a specified order and then moved to the proper screen, tag, position and dimensions. The next AwesomeWM version, 4.3, fixes this issue which can be built from [their official repo.](https://github.com/awesomeWM/awesome)
 
 For those who are using 4.2 until 4.3 is officially released, this module will make it easier to get the clients positioned. And likely still work in 4.3, but their new way of doing it is less messy than this.
 
@@ -69,7 +69,7 @@ if(num_bash < 1) then
   OCS:begin_startup()
 end
 ```
-To view a more indepth autostart script, look at the [end of the provided rc.lua.](https://github.com/vyth/OrderedClientStartup/blob/b13bd3f7c225fa28f278c95d8251e8729b6347c1/rc.lua#L589)
+To view a more in depth autostart script, look at the [end of the provided rc.lua.](https://github.com/vyth/OrderedClientStartup/blob/b13bd3f7c225fa28f278c95d8251e8729b6347c1/rc.lua#L589)
 
 ### Tips
 
