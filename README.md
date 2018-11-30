@@ -72,6 +72,7 @@ if((awful.client.iterate(function(c)
   OCS:begin_startup()
 end
 ```
+To view a more indepth autostart script, look at the [end of the provided rc.lua.](https://github.com/vyth/OrderedClientStartup/blob/b13bd3f7c225fa28f278c95d8251e8729b6347c1/rc.lua#L589)
 
 ### Tips
 
