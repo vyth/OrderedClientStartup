@@ -1,13 +1,13 @@
 # Ordered Client Startup
 ## AwesomeWM 4.2 module
 
-###About
+### About
 
 Module created to allow clients (applications) to be spawned in a specified order and then moved to the proper screen, tag, position and dimensions. The, currently unreleased, AwesomeWM version 4.3 fixes this issue which can be built from [their official repo.](https://github.com/awesomeWM/awesome)
 
 For those who are using 4.2 until 4.3 is officially released, this module will make it easier to get the clients positioned.
 
-###How to Use
+### How to Use
 
 **(1)** Place the OrderedClientStartup.lua file in your lua's path, for example:
 
@@ -71,7 +71,7 @@ if((awful.client.iterate(function(c)
   -- starts spawning apps
   OCS:begin_startup()
 end
-````
+```
 
 ###Tips
 
