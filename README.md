@@ -3,13 +3,13 @@
 
 ### About
 
-Module created to allow clients (applications) to be spawned in a specified order and then moved to the proper screen, tag, position and dimensions. The, currently unreleased, AwesomeWM version 4.3 fixes this issue which can be built from [their official repo.](https://github.com/awesomeWM/awesome)
+Module created to allow clients to be spawned in a specified order and then moved to the proper screen, tag, position and dimensions. The currently unreleased AwesomeWM version 4.3 fixes this issue which can be built from [their official repo.](https://github.com/awesomeWM/awesome)
 
-For those who are using 4.2 until 4.3 is officially released, this module will make it easier to get the clients positioned.
+For those who are using 4.2 until 4.3 is officially released, this module will make it easier to get the clients positioned. And likely still work in 4.3, but their new way of doing it is less messy than this.
 
 ### How to Use
 
-**(1)** Place the OrderedClientStartup.lua file in your lua's path, for example:
+**(1)** Place the [OrderedClientStartup.lua](https://github.com/vyth/OrderedClientStartup/blob/master/rc.lua) file in your lua's path, for example:
 
 ```
 ~/.luarocks/share/lua/5.2/
