@@ -604,19 +604,16 @@ screen[2].tags[lsrom_tag].layout = awful.layout.suit.tile.left;
 screen[2].tags[awewm_tag].layout = awful.layout.suit.tile.left;
 screen[2].tags[sec_tag].layout   = awful.layout.suit.tile.left;
 
--- popen not the best way to check if startup already happened...but good enough
--- until 4.3 comes out, and pgrep is quick enough to not block for periods of
--- time
-local fd = io.popen("pgrep bash | wc -l")
-local num_bash = tonumber(fd:read('*all'))
-fd:close()
-if(num_bash < 1) then 
+-- funky way to check if I have an open lxterminal and if so, then the startup
+-- script already launched, replace "Lxterminal" with whatever you always have
+-- open to prevent everything from launching during an AwesomeWM restart
+if((awful.client.iterate(function(c) 
+   return awful.rules.match(c, {class = "Lxterminal"})end))()) then
   --USAGE: OCS:add_app(index, command, tag, screen, [geo={x,y,w,h}])
   
   --NOTE:  To get proper screen coordinates use this in the terminal to report
   --       the x,y position of the mouse:
   --         watch -t -n 0.0001 xdotool getmouselocation 
-  --       Also, setting x,y coords only works when floating, not tiled
  
                              -- MONITOR 1 (RHS) --
                              

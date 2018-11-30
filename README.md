@@ -1,0 +1,95 @@
+# Ordered Client Startup
+## AwesomeWM 4.2 module
+
+####About
+
+Module created to allow clients (applications) to be spawned in a specified order and then moved to the proper screen, tag, position and dimensions. The, currently unreleased, AwesomeWM version 4.3 fixes this issue which can be built from [their official repo.](https://github.com/awesomeWM/awesome)
+
+For those who are using 4.2 until 4.3 is officially released, this module will make it easier to get the clients positioned.
+
+####How to Use
+
+**(1)** Place the OrderedClientStartup.lua file in your lua's path, for example:
+
+```
+~/.luarocks/share/lua/5.2/
+~/.luarocks/share/lua/5.2/
+/usr/local/share/lua/5.2/
+/usr/local/share/lua/5.2/
+/usr/local/lib/lua/5.2/
+/usr/local/lib/lua/5.2/
+/usr/share/lua/5.2/
+/usr/share/lua/5.2/
+```
+
+or in the same folder as your rc.lua.
+
+**(2)** Sample code to ad to end of your rc.lua file.
+
+
+'''
+local OCS = require("OrderedClientStartup")
+
+-- Set layouts **before** spawning apps
+screen[1].tags[1].layout = awful.layout.suit.floating
+screen[2].tags[1].layout = awful.layout.suit.tile.left;
+
+
+-- funky way to check if I have an open lxterminal and if so, then the startup
+-- script already launched, replace "Lxterminal" with whatever you always have
+-- open to prevent everything from launching during an AwesomeWM restart
+if((awful.client.iterate(function(c) 
+   return awful.rules.match(c, {class = "Lxterminal"})end))()) then
+
+  --USAGE: OCS:add_app(index, command, tag, screen, [geo={x,y,w,h}])
+  
+  --NOTE:  To get proper screen coordinates use this in the terminal to report
+  --       the x,y position of the mouse:
+  --         watch -t -n 0.0001 xdotool getmouselocation 
+  --       Also, setting x,y coords only works when floating, not tiled
+ 
+                             -- MONITOR 1 (RHS) --
+                             
+  OCS:add_app(3,"lxterminal", screen[1].tags[1], screen[1], 
+              {x=1920,y=25,w=1000,h=530})
+  OCS:add_app(4,"firefox", screen[1].tags[1], screen[1],
+              {x=2335,y=25,w=1504,h=1055})
+  OCS:add_app(5,"lxterminal -e \"deluge-console\"", 
+              screen[1].tags[1], screen[1],
+              {x=1920,y=764,w=1920,h=316})
+
+                             -- MONITOR 2 (LHS) --
+
+  OCS:add_app(6,"lxterminal --working-directory="/your/proj/dir"
+              screen[2].tags[lsrom_tag], screen[2])
+  OCS:add_app(7,"lxterminal --working-directory="/your/proj/dir"
+              screen[2].tags[lsrom_tag], screen[2])
+  OCS:add_app(8,"lxterminal --working-directory="/your/proj/dir"
+              screen[2].tags[lsrom_tag], screen[2])
+
+
+  -- starts spawning apps
+  OCS:begin_startup()
+end
+```
+
+####Tips
+
+- Use this command to find the (x,y) coordinates on your screen to help client's placement:
+```
+watch -t -n 0.0001 xdotool getmouselocation 
+```
+- Order of spawning matters for tiled layouts, an example of tile.left window order:
+```
++----------------------------------------------+
+|                       |                      |
+|                       |                      |
+|          2            |                      |
+|                       |                      |
++------------------------            3         |
+|                       |                      |
+|                       |                      |
+|          1            |                      |
+|                       |                      |
++----------------------------------------------+
+```
