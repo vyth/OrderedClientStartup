@@ -50,22 +50,22 @@ if((awful.client.iterate(function(c)
  
                              -- MONITOR 1 (RHS) --
                              
-  OCS:add_app(3,"lxterminal", screen[1].tags[1], screen[1], 
+  OCS:add_app(1,"lxterminal", screen[1].tags[1], screen[1], 
               {x=1920,y=25,w=1000,h=530})
-  OCS:add_app(4,"firefox", screen[1].tags[1], screen[1],
+  OCS:add_app(2,"firefox", screen[1].tags[1], screen[1],
               {x=2335,y=25,w=1504,h=1055})
-  OCS:add_app(5,"lxterminal -e \"deluge-console\"", 
+  OCS:add_app(3,"lxterminal -e \"deluge-console\"", 
               screen[1].tags[1], screen[1],
               {x=1920,y=764,w=1920,h=316})
 
                              -- MONITOR 2 (LHS) --
 
-  OCS:add_app(6,"lxterminal --working-directory="/your/proj/dir"
-              screen[2].tags[lsrom_tag], screen[2])
-  OCS:add_app(7,"lxterminal --working-directory="/your/proj/dir"
-              screen[2].tags[lsrom_tag], screen[2])
-  OCS:add_app(8,"lxterminal --working-directory="/your/proj/dir"
-              screen[2].tags[lsrom_tag], screen[2])
+  OCS:add_app(4,"lxterminal --working-directory="/your/proj/dir"
+              screen[2].tags[1], screen[2])
+  OCS:add_app(5,"lxterminal --working-directory="/your/proj/dir/includes"
+              screen[2].tags[1], screen[2])
+  OCS:add_app(6,"lxterminal --working-directory="/your/proj/dir/src"
+              screen[2].tags[1], screen[2])
 
 
   -- starts spawning apps
